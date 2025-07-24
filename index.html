@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Limon & Tanisha | Our Love Story</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
-        
         :root {
             --deep-purple: #4a0080;
             --mid-purple: #8a2be2;
             --light-purple: #b19cd9;
             --deep-pink: #ff1493;
             --light-pink: #ffb6c1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         html {
@@ -27,7 +33,8 @@
             background-attachment: fixed;
             color: white;
             overflow-x: hidden;
-            will-change: transform;
+            margin: 0;
+            padding: 0;
         }
         
         .romantic-font {
@@ -39,7 +46,6 @@
             position: relative;
             overflow: hidden;
             padding: 4rem 1rem;
-            will-change: transform;
         }
         
         .section::before {
@@ -53,28 +59,18 @@
             z-index: -1;
         }
         
-        .heart-bg {
-            position: absolute;
+        .container {
             width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -2;
-            opacity: 0.1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
         
         .heart {
             position: absolute;
             font-size: 1.5rem;
             color: white;
-            animation: float 6s infinite ease-in-out;
             opacity: 0.3;
-            will-change: transform;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
         }
         
         .timeline-item {
@@ -83,7 +79,6 @@
             padding-bottom: 2rem;
             border-left: 2px solid rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
-            will-change: transform;
         }
         
         .timeline-item:hover {
@@ -115,7 +110,7 @@
             padding: 2rem;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            will-change: transform;
+            margin-bottom: 1rem;
         }
         
         .quote-card:hover {
@@ -132,7 +127,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
             transform: rotate(-3deg);
-            will-change: transform;
+            margin-bottom: 2rem;
         }
         
         .photo-frame:hover {
@@ -153,13 +148,12 @@
             transition: all 0.5s ease;
         }
         
-        .photo-frame:hover .photo-inner img {
-            transform: scale(1.05);
-        }
-        
         .nav-link {
             position: relative;
             transition: all 0.3s ease;
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
         }
         
         .nav-link::after {
@@ -191,39 +185,11 @@
             z-index: -1;
         }
         
-        .btn-love {
-            background: linear-gradient(45deg, var(--deep-purple), var(--deep-pink));
-            border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 2rem;
-            color: white;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .btn-love:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .btn-love:active {
-            transform: translateY(-1px);
-        }
-        
         .scroll-indicator {
             position: absolute;
             bottom: 2rem;
             left: 50%;
             transform: translateX(-50%);
-            animation: bounce 2s infinite;
-            will-change: transform;
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-            40% { transform: translateY(-20px) translateX(-50%); }
-            60% { transform: translateY(-10px) translateX(-50%); }
         }
         
         .section-indicator {
@@ -261,21 +227,7 @@
         
         .glow-text {
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 
-                         0 0 20px rgba(255, 255, 255, 0.5),
-                         0 0 30px rgba(255, 20, 147, 0.5),
-                         0 0 40px rgba(255, 20, 147, 0.4);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 
-                                   0 0 20px rgba(255, 255, 255, 0.5),
-                                   0 0 30px rgba(255, 20, 147, 0.5),
-                                   0 0 40px rgba(255, 20, 147, 0.4); }
-            50% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 
-                              0 0 25px rgba(255, 255, 255, 0.7),
-                              0 0 35px rgba(255, 20, 147, 0.7),
-                              0 0 45px rgba(255, 20, 147, 0.6); }
+                         0 0 20px rgba(255, 20, 147, 0.5);
         }
         
         .highlight-date {
@@ -291,87 +243,239 @@
             width: 100%;
             height: 2px;
             background: linear-gradient(to right, transparent, var(--light-pink), transparent);
-            animation: expand 3s infinite;
         }
         
-        @keyframes expand {
-            0%, 100% { transform: scaleX(0.7); opacity: 0.5; }
-            50% { transform: scaleX(1); opacity: 1; }
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem;
         }
         
-        /* Optimize for smoother scrolling */
-        .optimize-gpu {
-            transform: translateZ(0);
-            backface-visibility: hidden;
-            perspective: 1000px;
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .navbar-brand {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .navbar-nav {
+            display: none;
+        }
+        
+        .navbar-nav.show {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+        }
+        
+        .navbar-nav a {
+            display: block;
+            padding: 0.5rem 0;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .navbar-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (min-width: 768px) {
+            .navbar-nav {
+                display: flex;
+            }
+            
+            .navbar-toggle {
+                display: none;
+            }
+            
+            .navbar-nav.show {
+                position: static;
+                background-color: transparent;
+                padding: 0;
+            }
+            
+            .navbar-nav a {
+                display: inline-block;
+                padding: 0;
+                margin-left: 1.5rem;
+            }
+        }
+        
+        /* Hero section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+            padding-top: 4rem;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+        }
+        
+        .hero-date {
+            opacity: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Grid layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .grid-2-cols {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Utilities */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-1 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .mb-2 {
+            margin-bottom: 1rem;
+        }
+        
+        .mb-3 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mb-4 {
+            margin-bottom: 2rem;
+        }
+        
+        .mt-4 {
+            margin-top: 2rem;
+        }
+        
+        .py-2 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 2rem 0;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div class="floating-hearts optimize-gpu" id="floatingHearts"></div>
-    
-    <nav class="fixed top-0 left-0 w-full bg-opacity-20 bg-black backdrop-blur-md z-50 px-4 py-4 optimize-gpu">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="romantic-font text-2xl md:text-3xl font-bold text-white">L & T</a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#our-story" class="nav-link text-white">Our Story</a>
-                <a href="#timeline" class="nav-link text-white">Timeline</a>
-                <a href="#moments" class="nav-link text-white">Moments</a>
-            </div>
-            <button class="md:hidden text-white text-xl" id="menuToggle">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="navbar-brand">L & T</a>
+            <button class="navbar-toggle" id="navbarToggle">
                 <i class="fas fa-bars"></i>
             </button>
-        </div>
-        <div class="mobile-menu hidden w-full pt-4 pb-2 px-4 md:hidden" id="mobileMenu">
-            <a href="#our-story" class="block py-2 text-white">Our Story</a>
-            <a href="#timeline" class="block py-2 text-white">Timeline</a>
-            <a href="#moments" class="block py-2 text-white">Moments</a>
+            <div class="navbar-nav" id="navbarNav">
+                <a href="#our-story" class="nav-link">Our Story</a>
+                <a href="#timeline" class="nav-link">Timeline</a>
+                <a href="#moments" class="nav-link">Moments</a>
+            </div>
         </div>
     </nav>
     
-    <div class="section-indicator hidden md:block optimize-gpu">
-        <div class="section-dot active" data-section="hero"></div>
-        <div class="section-dot" data-section="our-story"></div>
-        <div class="section-dot" data-section="timeline"></div>
-        <div class="section-dot" data-section="moments"></div>
-    </div>
-    
-    <section id="hero" class="section flex items-center justify-center optimize-gpu">
-        <div class="heart-bg"></div>
-        <div class="container mx-auto text-center">
-            <h1 class="romantic-font text-5xl md:text-7xl font-bold mb-6 opacity-0 transform translate-y-10 glow-text" id="heroTitle">
+    <!-- Hero Section -->
+    <section id="hero" class="section hero">
+        <div class="container">
+            <h1 class="romantic-font hero-title glow-text" id="heroTitle">
                 Limon & Tanisha
             </h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto opacity-0" id="heroSubtitle">
+            <p class="hero-subtitle" id="heroSubtitle">
                 A love story that began with a simple message and grew into something beautiful
             </p>
-            <div class="opacity-0" id="heroDate">
-                <p class="romantic-font text-xl md:text-3xl highlight-date">March 12, 2025</p>
-                <p class="text-sm mt-2">The day our journey began</p>
+            <div class="hero-date" id="heroDate">
+                <p class="romantic-font highlight-date" style="font-size: 1.5rem;">March 12, 2025</p>
+                <p class="mb-2">The day our journey began</p>
             </div>
             <div class="scroll-indicator">
-                <i class="fas fa-chevron-down text-white text-2xl"></i>
+                <i class="fas fa-chevron-down text-white" style="font-size: 1.5rem;"></i>
             </div>
         </div>
     </section>
     
-    <section id="our-story" class="section optimize-gpu">
-        <div class="container mx-auto">
-            <h2 class="romantic-font text-4xl md:text-5xl font-bold mb-12 text-center">Our Story</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+    <!-- Our Story Section -->
+    <section id="our-story" class="section">
+        <div class="container">
+            <h2 class="romantic-font section-title">Our Story</h2>
+            <div class="grid grid-2-cols">
                 <div class="photo-frame">
                     <div class="photo-inner">
-                        <img src="screenshot.png" alt="Limon and Tanisha" class="w-full h-full object-cover">
+                        <img src="screenshot.png" alt="Limon and Tanisha" style="width: 100%; height: 300px; object-fit: cover;">
                     </div>
                 </div>
                 <div>
-                    <p class="mb-6 text-lg">
+                    <p class="mb-2">
                         On the 12th of March 2025, in a simple group chat, two souls quietly crossed paths. There was no sign of what was to come—no dramatic beginning, no special spark. But Limon noticed her. And over time, through short texts, shared moments, and long silences, Tanisha began to mean something to him.
                     </p>
-                    <p class="mb-6 text-lg">
+                    <p class="mb-2">
                         Their bond was fragile at first. Unsure. But something grew.
                     </p>
-                    <p class="text-lg">
+                    <p>
                         Limon didn't fall in love the usual way. There wasn't one moment where everything changed. It was quiet. Slow. He didn't think she was the most special girl in the world when they first met. In fact, he admitted to himself that she wasn't different from others at first. But somehow, she became important because of the way he saw her. He gave her meaning. And that made her special.
                     </p>
                 </div>
@@ -379,234 +483,150 @@
         </div>
     </section>
     
-    <section id="timeline" class="section optimize-gpu">
-        <div class="container mx-auto">
-            <h2 class="romantic-font text-4xl md:text-5xl font-bold mb-12 text-center">Our Timeline</h2>
-            <div class="max-w-3xl mx-auto">
+    <!-- Timeline Section -->
+    <section id="timeline" class="section">
+        <div class="container">
+            <h2 class="romantic-font section-title">Our Timeline</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
                 <div class="timeline-item">
-                    <h3 class="text-2xl font-bold mb-2">March 12, 2025</h3>
-                    <p class="mb-4">The day we first met in a group chat. A simple hello that would change everything.</p>
+                    <h3 style="font-size: 1.5rem; font-weight: bold;" class="mb-1">March 12, 2025</h3>
+                    <p class="mb-2">The day we first met in a group chat. A simple hello that would change everything.</p>
                 </div>
                 <div class="timeline-item">
-                    <h3 class="text-2xl font-bold mb-2">Early Days</h3>
-                    <p class="mb-4">Short texts, shared moments, and long silences. A fragile bond began to form between us.</p>
+                    <h3 style="font-size: 1.5rem; font-weight: bold;" class="mb-1">Early Days</h3>
+                    <p class="mb-2">Short texts, shared moments, and long silences. A fragile bond began to form between us.</p>
                 </div>
                 <div class="timeline-item">
-                    <h3 class="text-2xl font-bold mb-2">Growing Closer</h3>
-                    <p class="mb-4">Tanisha shared every little detail of her life: where she was going, what she was feeling, even the most private aspects of her health. She trusted Limon deeply.</p>
+                    <h3 style="font-size: 1.5rem; font-weight: bold;" class="mb-1">Growing Closer</h3>
+                    <p class="mb-2">Tanisha shared every little detail of her life: where she was going, what she was feeling, even the most private aspects of her health. She trusted Limon deeply.</p>
                 </div>
                 <div class="timeline-item">
-                    <h3 class="text-2xl font-bold mb-2">Challenges</h3>
-                    <p class="mb-4">There were moments when Tanisha wanted to walk away—maybe out of hurt, or fear, or the thought that they could never be. But Limon didn't let go. Not once.</p>
+                    <h3 style="font-size: 1.5rem; font-weight: bold;" class="mb-1">Challenges</h3>
+                    <p class="mb-2">There were moments when Tanisha wanted to walk away—maybe out of hurt, or fear, or the thought that they could never be. But Limon didn't let go. Not once.</p>
                 </div>
                 <div class="timeline-item">
-                    <h3 class="text-2xl font-bold mb-2">April 30, 2025</h3>
-                    <p class="mb-4">The last night they spoke like they used to—as two people still deeply in love. That night was soft, filled with real care, gentle words, and warmth.</p>
+                    <h3 style="font-size: 1.5rem; font-weight: bold;" class="mb-1">April 30, 2025</h3>
+                    <p class="mb-2">The last night they spoke like they used to—as two people still deeply in love. That night was soft, filled with real care, gentle words, and warmth.</p>
                 </div>
                 <div class="timeline-item">
-                    <h3 class="text-2xl font-bold mb-2">The Farewell</h3>
-                    <p class="mb-4">Even in goodbye, they chose kindness. Their last words to each other: "I love you." "I love you too." Those words became sacred.</p>
+                    <h3 style="font-size: 1.5rem; font-weight: bold;" class="mb-1">The Farewell</h3>
+                    <p class="mb-2">Even in goodbye, they chose kindness. Their last words to each other: "I love you." "I love you too." Those words became sacred.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <section id="moments" class="section optimize-gpu">
-        <div class="container mx-auto">
-            <h2 class="romantic-font text-4xl md:text-5xl font-bold mb-12 text-center">Special Moments</h2>
-            <div class="grid md:grid-cols-2 gap-8">
+    <!-- Moments Section -->
+    <section id="moments" class="section">
+        <div class="container">
+            <h2 class="romantic-font section-title">Special Moments</h2>
+            <div class="grid grid-2-cols">
                 <div class="quote-card">
-                    <i class="fas fa-quote-left text-3xl opacity-50 mb-4"></i>
-                    <p class="text-lg mb-4">
+                    <i class="fas fa-quote-left" style="font-size: 1.5rem; opacity: 0.5;" class="mb-2"></i>
+                    <p class="mb-2">
                         When she was in pain, crying through her period, she called Limon. And he stayed. Just listening, softly assuring her that he was there. That moment made Limon feel truly loved.
                     </p>
-                    <p class="romantic-font text-xl text-right">- A Moment of Trust</p>
+                    <p class="romantic-font" style="font-size: 1.25rem; text-align: right;">- A Moment of Trust</p>
                 </div>
                 <div class="quote-card">
-                    <i class="fas fa-quote-left text-3xl opacity-50 mb-4"></i>
-                    <p class="text-lg mb-4">
+                    <i class="fas fa-quote-left" style="font-size: 1.5rem; opacity: 0.5;" class="mb-2"></i>
+                    <p class="mb-2">
                         She was protective, emotional, raw, and real. She wanted Limon to be only hers—even getting upset if he mentioned other women or admired a character from a movie.
                     </p>
-                    <p class="romantic-font text-xl text-right">- Her Love Language</p>
+                    <p class="romantic-font" style="font-size: 1.25rem; text-align: right;">- Her Love Language</p>
                 </div>
                 <div class="quote-card">
-                    <i class="fas fa-quote-left text-3xl opacity-50 mb-4"></i>
-                    <p class="text-lg mb-4">
+                    <i class="fas fa-quote-left" style="font-size: 1.5rem; opacity: 0.5;" class="mb-2"></i>
+                    <p class="mb-2">
                         He held her hand with his words, begged her to stay, even when he wasn't sure if he could keep his promises. He kept her close again and again—not because he was strong, but because he was afraid to lose her.
                     </p>
-                    <p class="romantic-font text-xl text-right">- His Devotion</p>
+                    <p class="romantic-font" style="font-size: 1.25rem; text-align: right;">- His Devotion</p>
                 </div>
                 <div class="quote-card">
-                    <i class="fas fa-quote-left text-3xl opacity-50 mb-4"></i>
-                    <p class="text-lg mb-4">
+                    <i class="fas fa-quote-left" style="font-size: 1.5rem; opacity: 0.5;" class="mb-2"></i>
+                    <p class="mb-2">
                         The 30th of April 2025 was the last night they spoke like they used to—as two people still deeply in love. That night was soft, filled with real care, gentle words, and warmth.
                     </p>
-                    <p class="romantic-font text-xl text-right">- The Last Night</p>
+                    <p class="romantic-font" style="font-size: 1.25rem; text-align: right;">- The Last Night</p>
                 </div>
             </div>
-            <div class="text-center mt-16">
-                <p class="romantic-font text-3xl mb-6 glow-text">"I love you." "I love you too."</p>
-                <p class="text-lg max-w-2xl mx-auto">
+            <div class="text-center mt-4">
+                <p class="romantic-font glow-text mb-2" style="font-size: 1.75rem;">"I love you." "I love you too."</p>
+                <p style="max-width: 600px; margin: 0 auto;">
                     Even in heartbreak, they chose to love. Even in goodbye, they chose kindness. Those words became sacred.
                 </p>
             </div>
         </div>
     </section>
     
-    <footer class="py-8 bg-black bg-opacity-30 optimize-gpu">
-        <div class="container mx-auto text-center">
-            <p class="romantic-font text-2xl mb-4">Limon & Tanisha</p>
-            <p class="mb-6">A love story that will live forever in our hearts</p>
-            <p class="text-sm opacity-70">© 2025 | Created with love</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="romantic-font mb-2" style="font-size: 1.5rem;">Limon & Tanisha</p>
+            <p class="mb-2">A love story that will live forever in our hearts</p>
+            <p style="font-size: 0.875rem; opacity: 0.7;">© 2025 | Created with love</p>
         </div>
     </footer>
     
     <script>
-        // Reduce the number of floating hearts for better performance
-        function createFloatingHearts() {
-            const container = document.getElementById('floatingHearts');
-            const colors = ['#ff1493', '#ff69b4', '#4a0080', '#8a2be2', '#b19cd9'];
-            
-            // Reduced from 20 to 10 hearts for better performance
-            for (let i = 0; i < 10; i++) {
-                const heart = document.createElement('div');
-                heart.classList.add('heart', 'optimize-gpu');
-                heart.innerHTML = '❤';
-                heart.style.left = `${Math.random() * 100}%`;
-                heart.style.top = `${Math.random() * 100}%`;
-                heart.style.fontSize = `${Math.random() * 1 + 0.5}rem`;
-                heart.style.color = colors[Math.floor(Math.random() * colors.length)];
-                heart.style.animationDelay = `${Math.random() * 5}s`;
-                container.appendChild(heart);
-            }
-        }
-        
-        // Mobile menu toggle
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.getElementById('mobileMenu').classList.add('hidden');
-            });
-        });
-        
-        // Section indicator - optimized
-        const sections = ['hero', 'our-story', 'timeline', 'moments'];
-        const sectionDots = document.querySelectorAll('.section-dot');
-        let ticking = false;
-        
-        function updateActiveDot() {
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    const scrollPosition = window.scrollY + window.innerHeight / 2;
-                    
-                    sections.forEach((sectionId, index) => {
-                        const section = document.getElementById(sectionId);
-                        const sectionTop = section.offsetTop;
-                        const sectionBottom = sectionTop + section.offsetHeight;
-                        
-                        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                            sectionDots.forEach(dot => dot.classList.remove('active'));
-                            sectionDots[index].classList.add('active');
-                        }
-                    });
-                    
-                    ticking = false;
-                });
-                
-                ticking = true;
-            }
-        }
-        
-        // Click on dots to navigate - using smooth scroll API for better performance
-        sectionDots.forEach(dot => {
-            dot.addEventListener('click', function() {
-                const sectionId = this.getAttribute('data-section');
-                document.getElementById(sectionId).scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
-        
-        // Optimized animation on scroll with throttling
-        let animationTicking = false;
-        
-        function animateOnScroll() {
-            if (!animationTicking) {
-                window.requestAnimationFrame(() => {
-                    const elements = document.querySelectorAll('.timeline-item, .quote-card, .photo-frame');
-                    const viewportHeight = window.innerHeight;
-                    
-                    elements.forEach(element => {
-                        const rect = element.getBoundingClientRect();
-                        
-                        // Only process elements near the viewport
-                        if (rect.top < viewportHeight * 1.2 && rect.bottom > -viewportHeight * 0.2) {
-                            if (rect.top < viewportHeight * 0.8 && rect.bottom > 0) {
-                                element.style.transform = 'translateY(0)';
-                                element.style.opacity = '1';
-                                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                            } else {
-                                element.style.transform = 'translateY(20px)';
-                                element.style.opacity = '0';
-                            }
-                        }
-                    });
-                    
-                    animationTicking = false;
-                });
-                
-                animationTicking = true;
-            }
-        }
-        
-        // Hero section animation - faster and optimized
-        function animateHero() {
-            const heroTitle = document.getElementById('heroTitle');
-            const heroSubtitle = document.getElementById('heroSubtitle');
-            const heroDate = document.getElementById('heroDate');
-            
-            // Apply all animations at once with different delays
-            heroTitle.style.transition = 'all 0.5s ease';
-            heroSubtitle.style.transition = 'all 0.5s ease 0.2s';
-            heroDate.style.transition = 'all 0.5s ease 0.4s';
-            
-            // Force a reflow to ensure transitions work
-            void heroTitle.offsetWidth;
-            
-            // Apply the changes
-            heroTitle.style.opacity = '1';
-            heroTitle.style.transform = 'translateY(0)';
-            heroSubtitle.style.opacity = '1';
-            heroDate.style.opacity = '1';
-        }
-        
-        // Initialize with optimized event listeners
-        window.addEventListener('load', function() {
-            createFloatingHearts();
-            animateHero();
-            updateActiveDot();
-            animateOnScroll();
-        });
-        
-        // Use passive event listeners for better scroll performance
-        window.addEventListener('scroll', updateActiveDot, { passive: true });
-        window.addEventListener('scroll', animateOnScroll, { passive: true });
-        
-        // Preload critical resources
+        // Simple mobile-optimized JavaScript
         document.addEventListener('DOMContentLoaded', function() {
-            // Preload fonts
-            const fontLink = document.createElement('link');
-            fontLink.rel = 'preload';
-            fontLink.as = 'style';
-            fontLink.href = 'https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap';
-            document.head.appendChild(fontLink);
+            // Mobile menu toggle
+            const navbarToggle = document.getElementById('navbarToggle');
+            const navbarNav = document.getElementById('navbarNav');
+            
+            navbarToggle.addEventListener('click', function() {
+                navbarNav.classList.toggle('show');
+            });
+            
+            // Close mobile menu when clicking a link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navbarNav.classList.remove('show');
+                });
+            });
+            
+            // Animate hero section
+            setTimeout(function() {
+                document.getElementById('heroTitle').style.opacity = '1';
+                document.getElementById('heroTitle').style.transition = 'opacity 0.5s ease';
+                
+                setTimeout(function() {
+                    document.getElementById('heroSubtitle').style.opacity = '1';
+                    document.getElementById('heroSubtitle').style.transition = 'opacity 0.5s ease';
+                    
+                    setTimeout(function() {
+                        document.getElementById('heroDate').style.opacity = '1';
+                        document.getElementById('heroDate').style.transition = 'opacity 0.5s ease';
+                    }, 200);
+                }, 200);
+            }, 200);
+            
+            // Simple intersection observer for animations
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+                
+                // Observe elements
+                const elements = document.querySelectorAll('.timeline-item, .quote-card, .photo-frame');
+                elements.forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    observer.observe(el);
+                });
+            }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9644440437b1dae2',t:'MTc1MzM2OTAwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96445f57b1c3dae4',t:'MTc1MzM3MDEyMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
